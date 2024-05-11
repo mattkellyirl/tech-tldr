@@ -6,14 +6,10 @@ const { User, Post, Comment } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const posts = await Post.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
+      include: {
+        model: User,
+      },
     });
-    console.log("Posts:", posts);
 
     res.render("home", {
       title: "Tech TL;DR",
@@ -21,7 +17,7 @@ router.get("/", async (req, res) => {
         title: post.title,
         content: post.content,
         created_at: dayjs(post.created_at).format("dddd, MMMM DD YYYY"),
-        // username: post.User.username,
+        username: post.user.username,
       })),
     });
   } catch (err) {

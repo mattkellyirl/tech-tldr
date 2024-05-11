@@ -1,34 +1,29 @@
 [
   {
-    "id": 1,
     "title": "Mastering React: Building Dynamic User Interfaces",
     "content": "Dive deep into React.js, mastering its component-based architecture to build dynamic and interactive user interfaces for web applications with ease.",
     "user_id": 1
   },
 
   {
-    "id": 2,
     "title": "Exploring Web Accessibility: Designing for All Users",
     "content": "Delve into the principles of web accessibility, ensuring your websites are inclusive and usable for all users, regardless of their abilities or disabilities.",
     "user_id": 1
   },
 
   {
-    "id": 3,
     "title": "The Power of Serverless Architecture: Building Scalable Web Applications",
     "content": "Explore the benefits of serverless architecture, leveraging cloud services to build scalable and cost-effective web applications without managing servers.",
     "user_id": 1
   },
 
   {
-    "id": 4,
     "title": "Harnessing the Power of Progressive Web Apps (PWAs)",
     "content": "Explore the world of Progressive Web Apps (PWAs), leveraging modern web technologies to create fast, reliable, and engaging user experiences across all devices.",
     "user_id": 1
   },
 
   {
-    "id": 5,
     "title": "Unraveling the Mysteries of CSS Grid",
     "content": "Delve into the intricacies of CSS Grid, mastering its powerful layout capabilities to design flexible and responsive web interfaces with ease.",
     "user_id": 1
