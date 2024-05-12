@@ -6,9 +6,7 @@ const { User, Post, Comment } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const posts = await Post.findAll({
-      include: {
-        model: User,
-      },
+      include: [{ model: User }],
     });
 
     res.render("index", {
@@ -78,8 +76,15 @@ router.get("/dashboard", async (req, res) => {
 // Render TL;DR Post
 router.get("/post/:id", async (req, res) => {
   try {
+    // Retrieve Post
     const post = await Post.findByPk(req.params.id, {
-      include: User,
+      include: [{ model: User }],
+    });
+
+    // Retrieve Comments
+    const postComments = await Comment.findAll({
+      where: { post_id: req.params.id },
+      include: [{ model: User, attributes: ["username"] }],
     });
 
     res.render("post", {
@@ -89,15 +94,35 @@ router.get("/post/:id", async (req, res) => {
         title: post.title,
         content: post.content,
         created_at: dayjs(post.created_at).format("dddd, MMMM DD YYYY"),
-        username: post.user.username,
+        post_username: post.user.username,
         post_id: post.id,
       },
+      comments: postComments.map((comment) => ({
+        content: comment.content,
+        created_at: dayjs(comment.created_at).format("dddd, MMMM DD YYYY"),
+        comment_username: comment.user.username,
+      })),
     });
   } catch (err) {
     console.error("Error Rendering Post:", err);
     return res
       .status(500)
       .json({ error: "Request Failed - Render Post", details: err });
+  }
+});
+
+// Render Edit TL;DR Post
+router.get("/post/:id/edit", async (req, res) => {
+  try {
+    res.render("edit-post", {
+      layout: "main",
+      title: "Tech TL;DR - Edit Post",
+    });
+  } catch (err) {
+    console.error("Error Rendering Edit Post:", err);
+    return res
+      .status(500)
+      .json({ error: "Request Failed - Render Edit Post", details: err });
   }
 });
 

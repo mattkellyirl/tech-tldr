@@ -1,0 +1,15 @@
+[
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "content": "React.js is a fantastic Javascript library!",
+    "post_id": 1,
+    "user_id": 2
+  },
+
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "content": "Go React!",
+    "post_id": 1,
+    "user_id": 3
+  }
+]

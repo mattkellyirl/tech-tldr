@@ -1,7 +1,22 @@
 [
   {
+    "id": 1,
     "username": "mattkelly",
     "email": "matt@autosportindex.com",
+    "password": "password123"
+  },
+
+  {
+    "id": 2,
+    "username": "markzuckerberg",
+    "email": "zuck@fb.com",
+    "password": "password123"
+  },
+
+  {
+    "id": 3,
+    "username": "elonmusk",
+    "email": "elon@tesla.com",
     "password": "password123"
   }
 ]
