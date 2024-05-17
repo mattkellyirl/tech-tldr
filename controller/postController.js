@@ -10,6 +10,8 @@ module.exports = {
         user_id: req.session.user_id,
       });
 
+      console.log("Request Body: ", req.body);
+
       console.log("New Post Created:", postData);
 
       return res

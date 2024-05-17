@@ -6,7 +6,10 @@
 
   <!--Form-->
   <div class="w-full max-w-3xl m-8">
-    <form class="bg-gray-100 border shadow rounded-lg p-8 sm:px-8 sm:py-8">
+    <form
+      class="bg-gray-100 border shadow rounded-lg p-8 sm:px-8 sm:py-8"
+      id="post-form"
+    >
       <div class="mb-4">
         <label class="block text-gray-900 text-sm font-bold mb-2" for="title">
           Title
@@ -14,17 +17,19 @@
         <input
           class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="title"
+          name="title"
           type="text"
           placeholder="Enter your title"
         />
       </div>
       <div class="mb-6">
-        <label class="block text-gray-900 text-sm font-bold mb-2" for="post">
+        <label class="block text-gray-900 text-sm font-bold mb-2" for="content">
           TL;DR
         </label>
         <textarea
           class="border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          id="post"
+          id="content"
+          name="content"
           type="text"
           placeholder="Enter your TL;DR"
         ></textarea>
@@ -32,7 +37,7 @@
       <div class="flex justify-center">
         <button
           class="px-3 py-2 text-white text-sm text-center items-center bg-blue-600 hover:bg-blue-800 transition-colors duration-300 font-medium rounded-lg"
-          type="button"
+          type="submit"
         >
           Post
         </button>
@@ -76,3 +81,5 @@
     </a>
   </div>
 </div>
+
+<script src="/event-handlers/post/handleNewPost.js"></script>

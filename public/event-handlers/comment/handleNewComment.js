@@ -3,19 +3,18 @@ const handleNewComment = async (event) => {
 
   try {
     // Retrieve comment from input text area
-    const comment = document.querySelector("#comment").value.trim();
+    const commentData = document.querySelector("#comment").value.trim();
 
     // Retrieve post_id attribute, stored in post container
-    const post = document.getElementById("post").getAttribute("data-post-id");
+    const postData = document
+      .getElementById("post")
+      .getAttribute("data-post-id");
 
-    console.log(post);
-    console.log(comment);
-
-    if (comment && post) {
+    if (commentData && postData) {
       const response = await fetch("/api/comments", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: comment, post_id: post }),
+        body: JSON.stringify({ content: commentData, post_id: postData }),
       });
 
       if (response.ok) {
