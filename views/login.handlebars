@@ -10,7 +10,12 @@
 
   <!--Form-->
   <div class="w-full sm:w-1/2 md:w-1/2 lg:w-2/6 m-8">
-    <form class="bg-gray-100 border shadow rounded-lg p-8 sm:px-8 sm:py-8">
+    <form
+      class="bg-gray-100 border shadow rounded-lg p-8 sm:px-8 sm:py-8"
+      id="login-form"
+      action="/api/users/login"
+      method="POST"
+    >
       <div class="mb-4">
         <label
           class="block text-gray-900 text-sm font-bold mb-2"
@@ -42,7 +47,7 @@
       <div class="flex justify-center">
         <button
           class="px-3 py-2 text-white text-sm text-center items-center bg-blue-600 hover:bg-blue-800 transition-colors duration-300 font-medium rounded-lg"
-          type="button"
+          type="submit"
         >
           Login
         </button>
@@ -50,3 +55,5 @@
     </form>
   </div>
 </div>
+
+<script src="/event-handlers/user/userLogin.js"></script>

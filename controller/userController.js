@@ -12,7 +12,7 @@ module.exports = {
       req.session.logged_in = true;
 
       console.log("New User Created:", newUserData);
-      console.log("New User Logged In:", newUserData);
+      console.log(req.session);
 
       return res
         .status(200)
@@ -50,6 +50,8 @@ module.exports = {
           req.session.logged_in = true;
 
           console.log("User Logged In:", userData);
+          console.log(req.session);
+
           return res
             .status(200)
             .json({ message: "Request Successful - User Logged In", userData });
@@ -75,6 +77,8 @@ module.exports = {
             .status(200)
             .json({ message: "Request Successful - User Logged Out" });
         });
+
+        console.log("User Logged Out");
       } else {
         return res
           .status(401)

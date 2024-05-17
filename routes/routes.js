@@ -12,6 +12,7 @@ router.get("/", async (req, res) => {
     res.render("index", {
       layout: "main",
       title: "Tech TL;DR - Home",
+      logged_in: req.session.logged_in,
       posts: posts.map((post) => ({
         title: post.title,
         content: post.content,
@@ -64,6 +65,7 @@ router.get("/dashboard", async (req, res) => {
     res.render("dashboard", {
       layout: "main",
       title: "Tech TL;DR - Dashboard",
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.error("Error Rendering Dashboard Page:", err);
@@ -90,6 +92,7 @@ router.get("/post/:id", async (req, res) => {
     res.render("post", {
       layout: "main",
       title: "Tech TL;DR - Post",
+      logged_in: req.session.logged_in,
       post: {
         title: post.title,
         content: post.content,
@@ -117,6 +120,7 @@ router.get("/post/:id/edit", async (req, res) => {
     res.render("edit-post", {
       layout: "main",
       title: "Tech TL;DR - Edit Post",
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.error("Error Rendering Edit Post:", err);
@@ -125,25 +129,5 @@ router.get("/post/:id/edit", async (req, res) => {
       .json({ error: "Request Failed - Render Edit Post", details: err });
   }
 });
-
-// // Handle New User Signup
-// router.post("/signup", async (req, res) => {
-//   try {
-//     const { username, password } = req.body;
-
-//     // Create a new user in the database
-//     const newUser = await User.create({ username, password });
-
-//     // Log in the user by setting session variables
-//     req.session.user_id = newUser.id;
-//     req.session.logged_in = true;
-
-//     // Redirect the user to the homepage
-//     res.redirect("/");
-//   } catch (err) {
-//     console.error("Error Signing Up User:", err);
-//     res.status(500).json({ error: "Error Signing Up User", details: err });
-//   }
-// });
 
 module.exports = router;
