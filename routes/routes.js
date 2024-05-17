@@ -126,4 +126,24 @@ router.get("/post/:id/edit", async (req, res) => {
   }
 });
 
+// // Handle New User Signup
+// router.post("/signup", async (req, res) => {
+//   try {
+//     const { username, password } = req.body;
+
+//     // Create a new user in the database
+//     const newUser = await User.create({ username, password });
+
+//     // Log in the user by setting session variables
+//     req.session.user_id = newUser.id;
+//     req.session.logged_in = true;
+
+//     // Redirect the user to the homepage
+//     res.redirect("/");
+//   } catch (err) {
+//     console.error("Error Signing Up User:", err);
+//     res.status(500).json({ error: "Error Signing Up User", details: err });
+//   }
+// });
+
 module.exports = router;

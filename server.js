@@ -39,7 +39,7 @@ app.set("view engine", "handlebars");
 // Middleware
 app.use(express.json()); // Parse incoming JSON requests
 app.use(express.urlencoded({ extended: true })); // Parse incoming URL-encoded form data
-app.use(express.static(path.join(__dirname, "public"))); // Serve static files from "public" directory
+app.use(express.static(path.join(__dirname, "/public"))); // Serve static files from "public" directory
 
 // Mount application routes
 app.use(routes);
