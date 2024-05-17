@@ -1,4 +1,4 @@
-const addComment = async (event) => {
+const handleNewComment = async (event) => {
   event.preventDefault();
 
   try {
@@ -27,10 +27,9 @@ const addComment = async (event) => {
     }
   } catch (err) {
     console.error("Error Adding Comment:", err);
-    return res
-      .status(500)
-      .json({ error: "Request Failed - Add Comment", details: err });
   }
 };
 
-document.querySelector("#comment-form").addEventListener("submit", addComment);
+document
+  .querySelector("#comment-form")
+  .addEventListener("submit", handleNewComment);

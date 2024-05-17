@@ -1,4 +1,4 @@
-const userLogout = async (event) => {
+const handleLogoutUser = async (event) => {
   event.preventDefault();
 
   try {
@@ -18,10 +18,9 @@ const userLogout = async (event) => {
     }
   } catch (err) {
     console.error("Error Logging Out User:", err);
-    return res
-      .status(500)
-      .json({ error: "Request Failed - Logging Out User", details: err });
   }
 };
 
-document.querySelector("#logout-button").addEventListener("click", userLogout);
+document
+  .querySelector("#logout-button")
+  .addEventListener("click", handleLogoutUser);

@@ -1,11 +1,11 @@
-const userLogin = async (event) => {
+const handleNewUser = async (event) => {
   event.preventDefault();
 
   const username = document.querySelector("#username").value.trim();
   const password = document.querySelector("#password").value.trim();
 
   try {
-    const response = await fetch("/api/users/login", {
+    const response = await fetch("/api/users/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -15,17 +15,16 @@ const userLogin = async (event) => {
       document.location.replace("/");
 
       const data = await response.json();
-      console.log("User Logged In:", data);
+      console.log("New User Signed Up:", data);
     } else {
       const errorData = await response.json();
-      console.error("Error Logging In User:", errorData);
+      console.error("Error Signing Up User:", errorData);
     }
   } catch (err) {
-    console.error("Error Logging In User:", err);
-    return res
-      .status(500)
-      .json({ error: "Request Failed - Logging In User", details: err });
+    console.error("Error Signing Up New User:", err);
   }
 };
 
-document.querySelector("#login-form").addEventListener("submit", userLogin);
+document
+  .querySelector("#signup-form")
+  .addEventListener("submit", handleNewUser);
