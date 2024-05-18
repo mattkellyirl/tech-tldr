@@ -1,6 +1,18 @@
 const handleNewComment = async (event) => {
   event.preventDefault();
 
+  // Retrieve the logged_in value from the HTML element and check if it is equal to the string "true".
+  // This comparison will set userLoggedIn to true (boolean) if the value is "true", otherwise false (boolean).
+  const userLoggedIn =
+    document.getElementById("logged-in").getAttribute("data-logged-in") ===
+    "true";
+
+  // If user not logged in, redirect to login
+  if (!userLoggedIn) {
+    document.location.replace("/login");
+    return;
+  }
+
   try {
     // Retrieve comment from input text area
     const commentData = document.querySelector("#comment").value.trim();
