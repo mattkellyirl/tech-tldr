@@ -1,5 +1,9 @@
 <!--Main-->
-<div class="container mx-auto flex flex-col p-8 items-center" id="logged-in" data-logged-in="{{logged_in}}">
+<div
+  class="container mx-auto flex flex-col p-8 items-center"
+  id="logged-in"
+  data-logged-in="{{logged_in}}"
+>
 
   <!--Main Container Title-->
   <h1 class="text-3xl font-bold tracking-tight text-gray-900">
@@ -10,8 +14,12 @@
   <div class="grid gap-6 m-8">
 
     <!--First Card-->
-    <div class="max-w-3xl p-6 border rounded-lg shadow bg-gray-100" id="post" data-post-id="{{post.post_id}}">
-      <h3 class="tracking-tight text-gray-400">{{post.created_at}}
+    <div
+      class="max-w-3xl p-6 border rounded-lg shadow bg-gray-100"
+      id="post"
+      data-post-id="{{post.post_id}}"
+    >
+      <h3 class="tracking-tight text-gray-400">{{formatDate created_at}}
         by
         {{post.post_username}}
       </h3>
@@ -25,12 +33,20 @@
 
     {{#if comments}}
       {{#each comments}}
-        {{> comment}}
+        <div class="max-w-3xl p-6 border rounded-lg shadow bg-gray-100">
+          <h3 class="tracking-tight text-gray-400">{{formatDate created_at}}
+            by
+            {{comment_username}}
+          </h3>
+          <p class="mb-3 font-normal text-gray-500">
+            {{content}}
+          </p>
+        </div>
       {{/each}}
     {{/if}}
 
     <!--Add New Comment-->
-      <form
+    <form
       class="bg-gray-100 border shadow rounded-lg p-8 sm:px-8 sm:py-8"
       id="comment-form"
     >

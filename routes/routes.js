@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
       posts: posts.map((post) => ({
         title: post.title,
         content: post.content,
-        created_at: dayjs(post.created_at).format("dddd, MMMM DD YYYY"),
+        created_at: post.created_at,
         username: post.user.username,
         post_id: post.id,
       })),
@@ -121,13 +121,13 @@ router.get("/post/:id", async (req, res) => {
       post: {
         title: post.title,
         content: post.content,
-        created_at: dayjs(post.created_at).format("dddd, MMMM DD YYYY"),
+        created_at: post.created_at,
         post_username: post.user.username,
         post_id: post.id,
       },
       comments: postComments.map((comment) => ({
         content: comment.content,
-        created_at: dayjs(comment.created_at).format("dddd, MMMM DD YYYY"),
+        created_at: comment.created_at,
         comment_username: comment.user.username,
       })),
     });
