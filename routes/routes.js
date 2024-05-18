@@ -142,10 +142,27 @@ router.get("/post/:id", async (req, res) => {
 // Render Edit TL;DR Post
 router.get("/post/:id/edit", async (req, res) => {
   try {
+    // Retrieve Post
+    const post = await Post.findByPk(req.params.id, {
+      include: [{ model: User }],
+      raw: true,
+      nest: true,
+    });
+
+    // If post doesn't exist, return 404 erro
+    if (!post) {
+      return res.status(404).json({ error: "Post Not Found" });
+    }
+
     res.render("edit-post", {
       layout: "main",
       title: "Tech TL;DR - Edit Post",
       logged_in: req.session.logged_in,
+      post: {
+        title: post.title,
+        content: post.content,
+        post_id: post.id,
+      },
     });
   } catch (err) {
     console.error("Error Rendering Edit Post:", err);

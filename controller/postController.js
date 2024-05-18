@@ -38,7 +38,7 @@ module.exports = {
         return res.status(404).json({ message: "Post Not Found" });
       } else {
         // If post exists, update it
-        const newPostData = await Post.update(
+        const [updated] = await Post.update(
           {
             title: req.body.title,
             content: req.body.content,
@@ -46,11 +46,15 @@ module.exports = {
           { where: { id: req.params.id } }
         );
 
-        console.log("Post Updated:", newPostData);
-
-        return res
-          .status(200)
-          .json({ message: "Request Successful - Update Post", newPostData });
+        if (updated) {
+          return res
+            .status(200)
+            .json({ message: "Request Successful - Update Post" });
+        } else {
+          return res
+            .status(500)
+            .json({ error: "Request Failed - Update Post" });
+        }
       }
     } catch (err) {
       console.error("Error Updating Post:", err);
