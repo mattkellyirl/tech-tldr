@@ -7,6 +7,8 @@ router.get("/", async (req, res) => {
   try {
     const posts = await Post.findAll({
       include: [{ model: User }],
+      raw: true,
+      nest: true,
     });
 
     res.render("index", {
@@ -62,11 +64,25 @@ router.get("/signup", async (req, res) => {
 // Render Dashboard Page
 router.get("/dashboard", async (req, res) => {
   try {
-    res.render("dashboard", {
-      layout: "main",
-      title: "Tech TL;DR - Dashboard",
-      logged_in: req.session.logged_in,
-    });
+    if (!req.session.logged_in) {
+      return res.redirect("/login");
+    } else {
+      const user = req.session.user_id;
+      const userPosts = await Post.findAll({
+        where: { user_id: user },
+        order: [["created_at", "DESC"]],
+        include: [{ model: User }],
+        raw: true,
+        nest: true,
+      });
+
+      res.render("dashboard", {
+        layout: "main",
+        title: "Tech TL;DR - Dashboard",
+        posts: userPosts,
+        logged_in: req.session.logged_in,
+      });
+    }
   } catch (err) {
     console.error("Error Rendering Dashboard Page:", err);
     return res
@@ -81,12 +97,21 @@ router.get("/post/:id", async (req, res) => {
     // Retrieve Post
     const post = await Post.findByPk(req.params.id, {
       include: [{ model: User }],
+      raw: true,
+      nest: true,
     });
+
+    // If post doesn't exist, return 404 erro
+    if (!post) {
+      return res.status(404).json({ error: "Post Not Found" });
+    }
 
     // Retrieve Comments
     const postComments = await Comment.findAll({
       where: { post_id: req.params.id },
       include: [{ model: User, attributes: ["username"] }],
+      raw: true,
+      nest: true,
     });
 
     res.render("post", {
