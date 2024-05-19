@@ -1,31 +1,36 @@
 [
   {
-    "title": "Mastering React: Building Dynamic User Interfaces",
-    "content": "Dive deep into React.js, mastering its component-based architecture to build dynamic and interactive user interfaces for web applications with ease.",
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "title": "Introducing Tailwind CSS: Building Flexible Web Layouts",
+    "content": "Tailwind CSS is a utility-first framework that simplifies styling by using pre-defined classes, making it quick and efficient to build responsive web layouts. Its customizable configuration and responsive design capabilities ensure consistent and adaptable designs across all devices.",
     "user_id": 1
   },
 
   {
-    "title": "Exploring Web Accessibility: Designing for All Users",
-    "content": "Delve into the principles of web accessibility, ensuring your websites are inclusive and usable for all users, regardless of their abilities or disabilities.",
-    "user_id": 1
-  },
-
-  {
-    "title": "The Power of Serverless Architecture: Building Scalable Web Applications",
-    "content": "Explore the benefits of serverless architecture, leveraging cloud services to build scalable and cost-effective web applications without managing servers.",
-    "user_id": 1
-  },
-
-  {
+    "created_at": "2024-05-10T06:21:45.155Z",
     "title": "Harnessing the Power of Progressive Web Apps (PWAs)",
-    "content": "Explore the world of Progressive Web Apps (PWAs), leveraging modern web technologies to create fast, reliable, and engaging user experiences across all devices.",
+    "content": "Progressive Web Apps (PWAs) combine the best of web and mobile apps to deliver fast, reliable, and engaging user experiences. Leveraging modern web technologies, PWAs work seamlessly across all devices.",
     "user_id": 1
   },
 
   {
-    "title": "Unraveling the Mysteries of CSS Grid",
-    "content": "Delve into the intricacies of CSS Grid, mastering its powerful layout capabilities to design flexible and responsive web interfaces with ease.",
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "title": "Mastering React: Building Dynamic User Interfaces",
+    "content": "React.js is a powerful JavaScript library for building dynamic and interactive user interfaces using a component-based architecture. It simplifies the development of complex web applications.",
+    "user_id": 1
+  },
+
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "title": "Exploring Web Accessibility: Designing for All Users",
+    "content": "Web accessibility ensures websites are usable by everyone, including those with disabilities. It improves user experience, boosts SEO, and promotes inclusivity.",
+    "user_id": 1
+  },
+
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "title": "The Power of Serverless Architecture: Building Scalable Web Applications",
+    "content": "Serverless architecture allows you to build scalable and cost-effective web applications using cloud services without the need to manage servers.",
     "user_id": 1
   }
 ]

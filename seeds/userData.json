@@ -18,5 +18,26 @@
     "username": "elonmusk",
     "email": "elon@tesla.com",
     "password": "password123"
+  },
+
+  {
+    "id": 4,
+    "username": "jackdorsey",
+    "email": "jack@twitter.com",
+    "password": "password123"
+  },
+
+  {
+    "id": 5,
+    "username": "larrypage",
+    "email": "larry@google.com",
+    "password": "password123"
+  },
+
+  {
+    "id": 6,
+    "username": "evanspiegel",
+    "email": "evan@snapchat.com",
+    "password": "password123"
   }
 ]

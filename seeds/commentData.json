@@ -1,15 +1,71 @@
 [
   {
     "created_at": "2024-05-10T06:21:45.155Z",
-    "content": "React.js is a fantastic Javascript library!",
+    "content": "Great overview, Matt! Tailwind CSS has revolutionized our development process. The pre-defined classes save so much time.",
     "post_id": 1,
+    "user_id": 5
+  },
+
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "content": "Tailwind CSS has made our design system more consistent across different projects. It's so easy to maintain and update.",
+    "post_id": 1,
+    "user_id": 4
+  },
+
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "content": "I've found that push notifications in PWAs have increased our user engagement dramatically. This technology is a must-have for anyone looking to enhance their web applications.",
+    "post_id": 2,
+    "user_id": 4
+  },
+
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "content": "Integrating PWAs into our existing web app was straightforward, and the performance boost was immediately noticeable. They're definitely worth the investment.",
+    "post_id": 2,
+    "user_id": 6
+  },
+
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "content": "React.js is a fantastic Javascript library!",
+    "post_id": 3,
     "user_id": 2
   },
 
   {
     "created_at": "2024-05-10T06:21:45.155Z",
-    "content": "Go React!",
-    "post_id": 1,
+    "content": "Lol, is that because you created it Mark? ;)",
+    "post_id": 3,
     "user_id": 3
+  },
+
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "content": "Excellent points, Matt. At Snap, we've seen firsthand how accessibility features improve user engagement and satisfaction.",
+    "post_id": 4,
+    "user_id": 6
+  },
+
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "content": "We've made a commitment to accessibility, and it's been incredibly rewarding. Users appreciate the effort, and our SEO has improved as well.",
+    "post_id": 4,
+    "user_id": 2
+  },
+
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "content": "Great insights, Matt. At Google, we've seen how serverless solutions can drive innovation and efficiency in web application development.",
+    "post_id": 5,
+    "user_id": 5
+  },
+
+  {
+    "created_at": "2024-05-10T06:21:45.155Z",
+    "content": "Thanks Larry!",
+    "post_id": 5,
+    "user_id": 1
   }
 ]
